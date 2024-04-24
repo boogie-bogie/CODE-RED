@@ -23,7 +23,7 @@ jobs:
       - name: CheckOut repository
         uses: actions/checkout@v3
       - name: Build and test with Docker Compose
-        run: docker-compose -f docker-compose.yaml up --build --abort-on-container-exit
+        run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
 
   deploy:
     runs-on: [ubuntu-latest]
