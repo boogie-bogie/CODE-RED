@@ -42,7 +42,6 @@ services:
     volumes:
       - ./redis/data:/data
     restart: always
-    command: redis-server --requirepass ${REDIS_PASSWORD}
     networks:
       - compose-networks
 
