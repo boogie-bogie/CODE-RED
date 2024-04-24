@@ -1,9 +1,9 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:471112717531:task-definition/codered-web-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:471112717531:task-definition/codered-web-task-definition:2",
   "containerDefinitions": [
     {
       "name": "codered-web",
-      "image": "471112717531.dkr.ecr.ap-northeast-2.amazonaws.com/codered-web",
+      "image": "471112717531.dkr.ecr.ap-northeast-2.amazonaws.com/codered-web:8a88e9be87962f5a7e0f543c898f2a9defe4cd11",
       "cpu": 0,
       "portMappings": [
         {
@@ -16,10 +16,8 @@
       ],
       "essential": true,
       "environment": [],
-      "environmentFiles": [],
       "mountPoints": [],
       "volumesFrom": [],
-      "ulimits": [],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -27,8 +25,7 @@
           "awslogs-group": "/ecs/codered-web-task-definition",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
-        },
-        "secretOptions": []
+        }
       },
       "systemControls": []
     }
@@ -37,7 +34,7 @@
   "taskRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
   "executionRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 2,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -78,7 +75,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-04-24T14:10:53.441Z",
-  "registeredBy": "arn:aws:iam::471112717531:root",
+  "registeredAt": "2024-04-24T15:56:38.959Z",
+  "registeredBy": "arn:aws:iam::471112717531:user/container-access",
   "tags": []
 }
