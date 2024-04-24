@@ -1,15 +1,15 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:763857617563:task-definition/nodejs-app-task-definition:3",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:471112717531:task-definition/codered-web-task-definition:1",
   "containerDefinitions": [
     {
-      "name": "nodejs-app",
-      "image": "763857617563.dkr.ecr.eu-north-1.amazonaws.com/nodejs-app",
+      "name": "codered-web",
+      "image": "471112717531.dkr.ecr.ap-northeast-2.amazonaws.com/codered-web",
       "cpu": 0,
       "portMappings": [
         {
-          "name": "nodejs-app-5000-tcp",
-          "containerPort": 5000,
-          "hostPort": 5000,
+          "name": "codered-web-3000-tcp",
+          "containerPort": 3000,
+          "hostPort": 3000,
           "protocol": "tcp",
           "appProtocol": "http"
         }
@@ -24,19 +24,20 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-create-group": "true",
-          "awslogs-group": "/ecs/nodejs-app-task-definition",
-          "awslogs-region": "eu-north-1",
+          "awslogs-group": "/ecs/codered-web-task-definition",
+          "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
         },
         "secretOptions": []
-      }
+      },
+      "systemControls": []
     }
   ],
-  "family": "nodejs-app-task-definition",
-  "taskRoleArn": "arn:aws:iam::763857617563:role/ecsTaskExecutionRole",
-  "executionRoleArn": "arn:aws:iam::763857617563:role/ecsTaskExecutionRole",
+  "family": "codered-web-task-definition",
+  "taskRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 3,
+  "revision": 1,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -77,7 +78,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2023-09-25T19:33:06.607Z",
-  "registeredBy": "arn:aws:iam::763857617563:root",
+  "registeredAt": "2024-04-24T14:10:53.441Z",
+  "registeredBy": "arn:aws:iam::471112717531:root",
   "tags": []
 }
