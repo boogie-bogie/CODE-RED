@@ -18,7 +18,6 @@ services:
       - compose-networks
 
   codered_postgresql:
-    build: ./postgisforDocker
     image: postgis/postgis
     restart: always
     container_name: codered_postgresql
@@ -34,7 +33,6 @@ services:
       - compose-networks
 
   codered_redis:
-    build: ./redisforDocker
     image: redis:latest
     container_name: codered_redis
     ports:
