@@ -2,11 +2,11 @@ name: Deploy to Amazon ECS
 
 on:
   push:
-    branches: [deploy-to-ecs-fargate] #main
+    branches: [deploy-to-ecs-fargate]
 
 env:
   AWS_REGION: ap-northeast-2
-  ECR_REPOSITORY: codered-web-repository
+  ECR_REPOSITORY: codered-web
   ECS_SERVICE: codered-web-service
   ECS_CLUSTER: DevCluster
   ECS_TASK_DEFINITION: ./codered-task-definition.json
@@ -51,10 +51,13 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
           REPOSITORY: ${{ env.ECR_REPOSITORY }}
 
-        run:
+        run: |
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+          REPOSITORY: ${{ env.ECR_REPOSITORY }}
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
