@@ -9,7 +9,7 @@ COPY package-lock.json ./
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
 
-# 의존성 설치
+# 의존성
 RUN npm ci
 
 # Nest.js 애플리케이션 빌드
