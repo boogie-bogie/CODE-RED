@@ -12,12 +12,13 @@ services:
       - .env
     command: npm run test:ci
     depends_on:
-      - codered-postgresql
+      - codered-postgres
       - codered-redis
     networks:
       - compose-networks
+    hostname: codered-web
 
-  codered-postgresql:
+  codered-postgres:
     image: postgis/postgis
     restart: always
     container_name: codered-postgres
@@ -31,6 +32,7 @@ services:
       - ./data/postgres/:/var/lib/postgresql/data
     networks:
       - compose-networks
+    hostname: codered-postgres
 
   codered-redis:
     image: redis:latest
@@ -42,6 +44,7 @@ services:
     restart: always
     networks:
       - compose-networks
+    hostname: codered-redis
 
 networks:
   compose-networks:
