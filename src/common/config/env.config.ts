@@ -1,12 +1,12 @@
 import Joi from 'joi';
 
 const dbSchema = {
-  DB_USERNAME: Joi.string().required(),
-  DB_PASSWORD: Joi.string().required(),
-  DB_HOST: Joi.string().required(),
-  DB_PORT: Joi.number().required(),
-  DB_NAME: Joi.string().required(),
-  DB_SYNC: Joi.boolean().required(),
+  POSTGRES_USERNAME: Joi.string().required(),
+  POSTGRES_PASSWORD: Joi.string().required(),
+  POSTGRES_HOST: Joi.string().required(),
+  POSTGRES_PORT: Joi.number().required(),
+  POSTGRES_NAME: Joi.string().required(),
+  POSTGRES_SYNC: Joi.boolean().required(),
 };
 
 const jwtSchema = {

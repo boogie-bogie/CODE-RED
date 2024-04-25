@@ -1,0 +1,59 @@
+{
+  "family": "codered-postgres-task-definition",
+  "taskRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "codered_postgresql",
+      "image": "postgis/postgis:latest",
+      "cpu": 256,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5432,
+          "hostPort": 5432
+        }
+      ],
+      "secrets": [
+        {
+          "name": "POSTGRES_HOST",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_HOST::"
+        },
+        {
+          "name": "POSTGRES_PORT",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_PORT::"
+        },
+        {
+          "name": "POSTGRES_USERNAME",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_USERNAME::"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_PASSWORD::"
+        },
+        {
+          "name": "POSTGRES_NAME",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_NAME::"
+        },
+        {
+          "name": "POSTGRES_SYNC",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_SYNC::"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/codered-postgresql",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "postgresql"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "3072"
+}

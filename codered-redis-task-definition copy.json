@@ -1,0 +1,47 @@
+{
+  "family": "codered-redis-task-definition",
+  "taskRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::471112717531:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "codered_redis",
+      "image": "redis:latest",
+      "cpu": 128,
+      "memory": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 6379,
+          "hostPort": 6379
+        }
+      ],
+      "secrets": [
+        {
+          "name": "REDIS_HOST",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_HOST::"
+        },
+        {
+          "name": "REDIS_PORT",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_PORT::"
+        },
+        {
+          "name": "REDIS_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_PASSWORD::"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/codered-redis",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "redis"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "3072"
+}
