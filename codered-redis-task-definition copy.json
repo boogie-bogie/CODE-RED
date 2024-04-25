@@ -5,7 +5,7 @@
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
-      "name": "codered_redis",
+      "name": "codered-redis",
       "image": "redis:latest",
       "cpu": 128,
       "memory": 256,

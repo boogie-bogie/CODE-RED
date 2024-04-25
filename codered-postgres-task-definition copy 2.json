@@ -5,7 +5,7 @@
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
-      "name": "codered_postgresql",
+      "name": "codered-postgres",
       "image": "postgis/postgis:latest",
       "cpu": 256,
       "memory": 512,
@@ -26,16 +26,16 @@
           "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_PORT::"
         },
         {
-          "name": "POSTGRES_USERNAME",
-          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_USERNAME::"
+          "name": "POSTGRES_USER",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_USER::"
         },
         {
           "name": "POSTGRES_PASSWORD",
           "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_PASSWORD::"
         },
         {
-          "name": "POSTGRES_NAME",
-          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_NAME::"
+          "name": "POSTGRES_DB",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_DB::"
         },
         {
           "name": "POSTGRES_SYNC",

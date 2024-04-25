@@ -1,11 +1,11 @@
 import Joi from 'joi';
 
 const dbSchema = {
-  POSTGRES_USERNAME: Joi.string().required(),
+  POSTGRES_USER: Joi.string().required(),
   POSTGRES_PASSWORD: Joi.string().required(),
   POSTGRES_HOST: Joi.string().required(),
   POSTGRES_PORT: Joi.number().required(),
-  POSTGRES_NAME: Joi.string().required(),
+  POSTGRES_DB: Joi.string().required(),
   POSTGRES_SYNC: Joi.boolean().required(),
 };
 

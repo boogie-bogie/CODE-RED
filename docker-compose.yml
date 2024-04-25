@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  codered_web:
+  codered-web:
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,29 +12,29 @@ services:
       - .env
     command: npm run test:ci
     depends_on:
-      - codered_postgresql
-      - codered_redis
+      - codered-postgresql
+      - codered-redis
     networks:
       - compose-networks
 
-  codered_postgresql:
+  codered-postgresql:
     image: postgis/postgis
     restart: always
-    container_name: codered_postgresql
+    container_name: codered-postgres
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: postgres
-      POSTGRES_USERNAME: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
     volumes:
       - ./data/postgres/:/var/lib/postgresql/data
     networks:
       - compose-networks
 
-  codered_redis:
+  codered-redis:
     image: redis:latest
-    container_name: codered_redis
+    container_name: codered-redis
     ports:
       - 6379:6379
     volumes:

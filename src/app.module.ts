@@ -45,11 +45,11 @@ const typeOrmModuleOptions = {
   ): Promise<TypeOrmModuleOptions> => ({
     namingStrategy: new SnakeNamingStrategy(), //TypeORM에서 사용되는 네이밍 전략 중 하나, 데이터베이스 테이블과 컬럼의 이름을 스네이크 케이스(snake_case)로 변환하는 전략
     type: 'postgres',
-    username: configService.get('POSTGRES_USERNAME'),
+    username: configService.get('POSTGRES_USER'),
     password: configService.get('POSTGRES_PASSWORD'),
     host: configService.get('POSTGRES_HOST'),
     port: configService.get('POSTGRES_PORT'),
-    database: configService.get('POSTGRES_NAME'),
+    database: configService.get('POSTGRES_DB'),
     synchronize: configService.get('POSTGRES_SYNC'), // 데이터베이스 스키마와 애플리케이션의 엔티티 클래스 간의 동기화를 제어, 일반적으로 false로 설정하여 동기화를 방지
     entities: [
       Users,
