@@ -39,7 +39,7 @@
         },
         {
           "name": "POSTGRES_USER",
-          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_USERNAME::"
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_USER::"
         },
         {
           "name": "POSTGRES_PASSWORD",
@@ -47,7 +47,7 @@
         },
         {
           "name": "POSTGRES_DB",
-          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_NAME::"
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_DB::"
         },
         {
           "name": "POSTGRES_SYNC",
