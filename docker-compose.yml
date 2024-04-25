@@ -10,7 +10,6 @@ services:
       - .:/usr/src/app
     env_file:
       - .env
-    command: npm run test:ci
     depends_on:
       - codered-postgres
       - codered-redis
