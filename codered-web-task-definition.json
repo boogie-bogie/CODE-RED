@@ -12,10 +12,14 @@
       "essential": true,
       "portMappings": [
         {
+          "name": "web-port-3000",
           "containerPort": 3000,
           "hostPort": 3000
         }
       ],
+      "entryPoint": ["sh", "-c"],
+      "command": ["node dist/main"],
+      "environment": [],
       "secrets": [
         {
           "name": "REDIS_HOST",

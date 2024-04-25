@@ -12,6 +12,7 @@
       "essential": true,
       "portMappings": [
         {
+          "name": "redis-port-6379",
           "containerPort": 6379,
           "hostPort": 6379
         }

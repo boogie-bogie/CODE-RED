@@ -38,3 +38,7 @@ COPY --from=development /usr/src/app/dist ./dist
 
 # 애플리케이션 실행 명령
 CMD ["node", "dist/main"]
+
+# Health Check 추가
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+CMD curl -f http://localhost:3000/health || exit 1
