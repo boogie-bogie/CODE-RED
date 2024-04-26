@@ -19,6 +19,11 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-22.04
+    services:
+      redis:
+        image: codered-redis
+        ports:
+          - 6379:6379
     steps:
       - name: CheckOut repository
         uses: actions/checkout@v3
@@ -26,6 +31,9 @@ jobs:
         run: docker-compose -f docker-compose.yml up --build --abort-on-container-exit
         continue-on-error: true
         working-directory: ./
+        env:
+          REDIS_HOST: codered-redis
+          REDIS_PASSWORD: redispassword
 
   deploy:
     runs-on: [ubuntu-latest]

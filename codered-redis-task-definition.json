@@ -25,6 +25,10 @@
         {
           "name": "REDIS_PORT",
           "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_PORT::"
+        },
+        {
+          "name": "REDIS_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_PASSWORD::"
         }
       ],
       "logConfiguration": {
