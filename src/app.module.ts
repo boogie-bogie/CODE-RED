@@ -14,7 +14,7 @@ import { ChatModule } from './chat/chat.module';
 import { SheltersModule } from './shelters/shelters.module';
 import { DmModule } from './direct-message/dm.module';
 import { ScheduleModule } from '@nestjs/schedule';
-import { CacheModule } from '@nestjs/cache-manager';
+//import { CacheModule } from '@nestjs/cache-manager';
 
 import { Users } from './common/entities/users.entity';
 import { Posts } from './common/entities/posts.entity';
@@ -132,16 +132,16 @@ const typeOrmModuleOptions = {
       }),
       inject: [ConfigService],
     }),
-    CacheModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        store: redisStore,
-        host: configService.get('REDIS_HOST'),
-        port: configService.get('REDIS_PORT'),
-      }),
-      inject: [ConfigService],
-      isGlobal: true,
-    }),
+    // CacheModule.registerAsync({
+    //   imports: [ConfigModule],
+    //   useFactory: async (configService: ConfigService) => ({
+    //     store: redisStore,
+    //     host: configService.get('REDIS_HOST'),
+    //     port: configService.get('REDIS_PORT'),
+    //   }),
+    //   inject: [ConfigService],
+    //   isGlobal: true,
+    // }),
     ScheduleModule.forRoot(),
     CommonModule,
     UsersModule,

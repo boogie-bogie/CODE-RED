@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { RedisService } from './redis/redis.index';
-import { Cache } from '@nestjs/cache-manager';
+//import { Cache } from '@nestjs/cache-manager';
 import { InjectRepository } from '@nestjs/typeorm';
 import { NotificationMessages } from 'src/common/entities/notification-messages.entity';
 import { In, Repository } from 'typeorm';
@@ -14,8 +14,8 @@ export class NotificationsService {
   constructor(
     @InjectRepository(NotificationMessages)
     private notificationMessagesRepository: Repository<NotificationMessages>,
-    private redisService: RedisService,
-    private cacheManager: Cache,
+    //private redisService: RedisService,
+    //private cacheManager: Cache,
   ) {}
 
   // 1. FCM 발송된 알림 목록 조회 API
