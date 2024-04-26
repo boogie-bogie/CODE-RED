@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-22.04
     services:
       redis:
-        image: codered-redis
+        image: redis:7.0.15-alpine
         ports:
           - 6379:6379
     steps:
@@ -33,7 +33,6 @@ jobs:
         working-directory: ./
         env:
           REDIS_HOST: codered-redis
-          REDIS_PASSWORD: redispassword
 
   deploy:
     runs-on: [ubuntu-latest]

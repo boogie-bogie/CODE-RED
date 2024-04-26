@@ -22,14 +22,7 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
     this.redisClient = new Redis({
       host: process.env.REDIS_HOST,
       port: parseInt(process.env.REDIS_PORT),
-      password: process.env.REDIS_PASSWORD,
-      retryStrategy: (times) => {
-        // 3초 후에 재연결 시도, 최대 10번까지 재시도
-        if (times < 10) {
-          return 3000; // 3초 후 재시도
-        }
-        return null; // 더 이상 재시도하지 않음
-      },
+      password: process.env.REDIS_PASSWORD || undefined,
     });
   }
 
