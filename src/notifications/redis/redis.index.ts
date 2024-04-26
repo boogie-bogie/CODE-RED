@@ -7,15 +7,15 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
 
   constructor() {
     console.log(
-      '------------------------------------------------------------------------REDIS_HOST:',
+      '===============CONSTRUCTOR LOG============== REDIS_HOST:',
       process.env.REDIS_HOST || 'No REDIS_HOST',
     );
     console.log(
-      '------------------------------------------------------------------------REDIS_PORT:',
+      '===============CONSTRUCTOR LOG============== REDIS_PORT:',
       process.env.REDIS_PORT || 'No REDIS_PORT',
     );
     console.log(
-      '------------------------------------------------------------------------REDIS_PASSWORD:',
+      '===============CONSTRUCTOR LOG============== REDIS_PASSWORD:',
       process.env.REDIS_PASSWORD ? 'set' : 'not set',
     );
 
@@ -28,15 +28,15 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
 
   onModuleInit() {
     console.log(
-      '------------------------------------------------------------------------REDIS_HOST:',
+      '=/=/=/=/=/=/=/=/=/=/=/=/=/=/=CONSTRUCTOR LOG=/=/=/=/=/=/=/=/=/=/=/=/=/= REDIS_HOST:',
       process.env.REDIS_HOST || 'No REDIS_HOST',
     );
     console.log(
-      '------------------------------------------------------------------------REDIS_PORT:',
+      '=/=/=/=/=/=/=/=/=/=/=/=/=/=/=CONSTRUCTOR LOG=/=/=/=/=/=/=/=/=/=/=/=/=/= REDIS_PORT:',
       process.env.REDIS_PORT || 'No REDIS_PORT',
     );
     console.log(
-      '------------------------------------------------------------------------REDIS_PASSWORD:',
+      '=/=/=/=/=/=/=/=/=/=/=/=/=/=/=CONSTRUCTOR LOG=/=/=/=/=/=/=/=/=/=/=/=/=/= REDIS_PASSWORD:',
       process.env.REDIS_PASSWORD ? 'set' : 'not set',
     );
 
