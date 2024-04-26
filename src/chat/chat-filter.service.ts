@@ -50,21 +50,21 @@ import * as path from 'path';
 export class ChatFilterService {
   private bannedWords: string[];
 
-  constructor() {
-    this.loadBannedWords();
-  }
+  // constructor() {
+  //   this.loadBannedWords();
+  // }
 
-  private loadBannedWords(): void {
-    try {
-      const filePath = path.resolve('src', 'chat', 'banned-words.txt');
+  // private loadBannedWords(): void {
+  //   try {
+  //     const filePath = path.resolve('src', 'chat', 'banned-words.txt');
 
-      const data = fs.readFileSync(filePath, 'utf8');
-      this.bannedWords = data.split('\n').map((word) => word.trim());
-    } catch (error) {
-      console.error('욕설 목록 파일 읽기 오류:', error);
-      this.bannedWords = [];
-    }
-  }
+  //     const data = fs.readFileSync(filePath, 'utf8');
+  //     this.bannedWords = data.split('\n').map((word) => word.trim());
+  //   } catch (error) {
+  //     console.error('욕설 목록 파일 읽기 오류:', error);
+  //     this.bannedWords = [];
+  //   }
+  // }
 
   filterMessage(message: { message: string; clientId: string }): string {
     if (!this.bannedWords || this.bannedWords.length === 0) {
