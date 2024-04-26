@@ -1,36 +1,50 @@
 version: '3.8'
 services:
   codered-web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: codered-web
     ports:
       - '3000:3000'
-    environment:
-      REDIS_HOST: codered-redis
-      REDIS_PORT: 6379
-      POSTGRES_HOST: codered-postgres
-      POSTGRES_PORT: 5432
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
     depends_on:
-      - codered-redis
       - codered-postgres
-
-  codered-redis:
-    image: redis:latest
-    ports:
-      - '6379:6379'
+      - codered-redis
+    networks:
+      - compose-networks
 
   codered-postgres:
     image: postgis/postgis
+    hostname: codered-postgres
+    restart: always
+    container_name: codered-postgres
+    ports:
+      - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
-    ports:
-      - '5432:5432'
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./data/postgres/:/var/lib/postgresql/data
+    networks:
+      - compose-networks
 
-volumes:
-  postgres_data:
+  codered-redis:
+    hostname: codered-redis
+    image: redis:latest
+    container_name: codered-redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/data:/data
+    restart: always
+    networks:
+      - compose-networks
+
+networks:
+  compose-networks:
+    driver: bridge

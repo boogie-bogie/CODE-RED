@@ -9,7 +9,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Users } from 'src/common/entities/users.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { RedisService } from 'src/notifications/redis/redis.service';
+import { RedisService } from 'src/notifications/redis/redis.index';
 import { GeoLocationService } from '../notifications/streams/user-location-streams/user-location.service';
 import { AwsService } from 'src/aws/aws.service';
 import { Clients } from 'src/common/entities/clients.entity';

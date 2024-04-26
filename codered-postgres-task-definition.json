@@ -6,10 +6,11 @@
   "containerDefinitions": [
     {
       "name": "codered-postgres",
-      "image": "postgis/postgis:latest",
+      "image": "471112717531.dkr.ecr.ap-northeast-2.amazonaws.com/codered-postgres",
       "cpu": 256,
       "memory": 512,
       "essential": true,
+      "entryPoint": ["node", "/dist/main.js"],
       "portMappings": [
         {
           "name": "postgres-port-5432",

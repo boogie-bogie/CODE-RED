@@ -1,6 +1,6 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { RedisService } from '../../redis/redis.service';
+import { RedisService } from '../../redis/redis.index';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { DisasterData } from 'src/common/entities/disaster-data.entity';
 import { InjectRepository } from '@nestjs/typeorm';

@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { RedisService } from '../redis/redis.service';
+import { RedisService } from '../redis/redis.index';
 import { DisasterMessageParserService } from 'src/utils/disaster-message.parser.service';
 import {
   ClientsInfo,

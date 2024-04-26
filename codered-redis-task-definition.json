@@ -6,10 +6,11 @@
   "containerDefinitions": [
     {
       "name": "codered-redis",
-      "image": "redis:latest",
+      "image": "471112717531.dkr.ecr.ap-northeast-2.amazonaws.com/codered-redis",
       "cpu": 128,
       "memory": 256,
       "essential": true,
+      "entryPoint": ["node", "/dist/main.js"],
       "portMappings": [
         {
           "name": "redis-port-6379",
