@@ -10,7 +10,7 @@
       "cpu": 256,
       "memory": 512,
       "essential": true,
-      "entryPoint": ["node", "/dist/main.js"],
+      "entryPoint": ["node", "dist/main.js"],
       "portMappings": [
         {
           "name": "web-port-3000",

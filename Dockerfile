@@ -35,6 +35,7 @@ RUN npm install --only=production
 
 # 개발 환경에서 빌드한 Nest.js 애플리케이션 복사
 COPY --from=development /usr/src/app/dist ./dist
+COPY --from=development /app/node_modules ./node_modules
 
 # 애플리케이션 실행 명령
 CMD ["node", "dist/main"]

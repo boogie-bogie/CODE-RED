@@ -10,7 +10,6 @@
       "cpu": 128,
       "memory": 256,
       "essential": true,
-      "entryPoint": ["node", "/dist/main.js"],
       "portMappings": [
         {
           "name": "redis-port-6379",
