@@ -35,7 +35,7 @@ services:
 
   codered-redis:
     hostname: codered-redis
-    image: redis:latest
+    image: redis:7.0.15-alpine
     container_name: codered-redis
     ports:
       - 6379:6379
