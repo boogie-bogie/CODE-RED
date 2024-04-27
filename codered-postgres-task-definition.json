@@ -19,6 +19,14 @@
       ],
       "secrets": [
         {
+          "name": "REDIS_HOST",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_HOST::"
+        },
+        {
+          "name": "REDIS_PORT",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REDIS_PORT::"
+        },
+        {
           "name": "POSTGRES_HOST",
           "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_HOST::"
         },
@@ -41,6 +49,138 @@
         {
           "name": "POSTGRES_SYNC",
           "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:POSTGRES_SYNC::"
+        },
+        {
+          "name": "JWT_SECRET_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:JWT_SECRET_KEY::"
+        },
+        {
+          "name": "PASSWORD_SALT_ROUNDS",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:PASSWORD_SALT_ROUNDS::"
+        },
+        {
+          "name": "AWS_REGION",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:AWS_REGION::"
+        },
+        {
+          "name": "AWS_S3_ACCESS_KEY_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:AWS_S3_ACCESS_KEY_ID::"
+        },
+        {
+          "name": "AWS_S3_SECRET_ACCESS_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:AWS_S3_SECRET_ACCESS_KEY::"
+        },
+        {
+          "name": "AWS_S3_BUCKET_NAME",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:AWS_S3_BUCKET_NAME::"
+        },
+        {
+          "name": "SHELTER_API",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:SHELTER_API::"
+        },
+        {
+          "name": "REAL_TIME_DATA_API",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:REAL_TIME_DATA_API::"
+        },
+        {
+          "name": "KAKAO_MAP_REST_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:KAKAO_MAP_REST_API_KEY::"
+        },
+        {
+          "name": "KAKAO_REST_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:KAKAO_REST_API_KEY::"
+        },
+        {
+          "name": "DISASTER_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:DISASTER_API_KEY::"
+        },
+        {
+          "name": "API_ENDPOINT",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:API_ENDPOINT::"
+        },
+        {
+          "name": "KAKAO_LOGIN_REST_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:KAKAO_LOGIN_REST_API_KEY::"
+        },
+        {
+          "name": "VAPID_PUBLIC_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:VAPID_PUBLIC_KEY::"
+        },
+        {
+          "name": "FIREBASE_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_API_KEY::"
+        },
+        {
+          "name": "FIREBASE_AUTH_DOMAIN",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_AUTH_DOMAIN::"
+        },
+        {
+          "name": "FIREBASE_PROJECT_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_PROJECT_ID::"
+        },
+        {
+          "name": "FIREBASE_STORAGEBUCKET",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_STORAGEBUCKET::"
+        },
+        {
+          "name": "FIREBASE_MESSAGING_SENDER_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_MESSAGING_SENDER_ID::"
+        },
+        {
+          "name": "FIREBASE_APP_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_APP_ID::"
+        },
+        {
+          "name": "FIREBASE_MEASUREMENT_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_MEASUREMENT_ID::"
+        },
+        {
+          "name": "FIREBASE_TYPE",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_TYPE::"
+        },
+        {
+          "name": "FIREBASE_PRIVATE_KEY_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_PRIVATE_KEY_ID::"
+        },
+        {
+          "name": "FIREBASE_PRIVATE_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_PRIVATE_KEY::"
+        },
+        {
+          "name": "FIREBASE_CLIENT_EMAIL",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_CLIENT_EMAIL::"
+        },
+        {
+          "name": "FIREBASE_CLIENT_ID",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_CLIENT_ID::"
+        },
+        {
+          "name": "FIREBASE_AUTH_URI",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_AUTH_URI::"
+        },
+        {
+          "name": "FIREBASE_TOKEN_URI",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_TOKEN_URI::"
+        },
+        {
+          "name": "FIREBASE_AUTH_PROVIDER_X509_CERT_URL",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_AUTH_PROVIDER_X509_CERT_URL::"
+        },
+        {
+          "name": "FIREBASE_CLIENT_X509_CERT_URL",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:FIREBASE_CLIENT_X509_CERT_URL::"
+        },
+        {
+          "name": "GCM_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:GCM_KEY::"
+        },
+        {
+          "name": "SUBJECT",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:SUBJECT::"
+        },
+        {
+          "name": "VAPID_PRIVATE_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:471112717531:secret:codered-secrets-LS0rgJ:VAPID_PRIVATE_KEY::"
         }
       ],
       "logConfiguration": {
