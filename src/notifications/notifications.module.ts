@@ -1,7 +1,7 @@
 import { Module, forwardRef } from '@nestjs/common';
 import { NotificationsService } from './notifications.service';
 import { NotificationsController } from './notifications.controller';
-import { RedisService } from './redis/redis.index';
+import { RedisService } from './redis/redis.client';
 import { GeoLocationService } from './streams/user-location-streams/user-location.service';
 import { DisasterService } from './streams/disaster-streams/disaster.service';
 import { ScheduleModule } from '@nestjs/schedule';

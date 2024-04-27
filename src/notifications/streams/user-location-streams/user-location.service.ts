@@ -1,7 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { RedisService } from '../../redis/redis.index';
+import { RedisService } from '../../redis/redis.client';
 import { RedisKeys } from 'src/notifications/redis/redis.keys';
 import { Interval } from '@nestjs/schedule';
 

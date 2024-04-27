@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { RedisService } from './redis/redis.index';
+import { RedisService } from './redis/redis.client';
 //import { Cache } from '@nestjs/cache-manager';
 import { InjectRepository } from '@nestjs/typeorm';
 import { NotificationMessages } from 'src/common/entities/notification-messages.entity';
