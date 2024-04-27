@@ -1,50 +1,33 @@
 version: '3.8'
 services:
-  codered-web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    hostname: codered-web
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/usr/src/app
-    env_file:
-      - .env
-    depends_on:
-      - codered-postgres
-      - codered-redis
-    networks:
-      - compose-networks
-
   codered-postgres:
-    image: postgis/postgis
-    hostname: codered-postgres
-    restart: always
-    container_name: codered-postgres
+    build: ./postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - '5432:5432'
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
     volumes:
-      - ./data/postgres/:/var/lib/postgresql/data
-    networks:
-      - compose-networks
+      - postgres_data:/var/lib/postgresql/data
 
   codered-redis:
-    hostname: codered-redis
-    image: redis:7.0.15-alpine
-    container_name: codered-redis
+    build: ./redis
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
     ports:
-      - 6379:6379
-    volumes:
-      - ./redis/data:/data
-    restart: always
-    networks:
-      - compose-networks
+      - '6379:6379'
+
+  codered-web:
+    build: ./webapp
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@codered-postgres:5432/${POSTGRES_DB}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@codered-redis:6379
+
+volumes:
+  postgres_data:
 
 networks:
-  compose-networks:
+  default:
     driver: bridge
