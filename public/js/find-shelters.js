@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     navigator.geolocation
         .getCurrentPosition(position => {
-        //let lat = position.coords.latitude, // 위도
-            //lon = position.coords.longitude; // 경도
+        let latitude = position.coords.latitude, // 위도
+        longitude = position.coords.longitude; // 경도
 
-        let longitude = 127.300616,
-        latitude = 37.657918
+        //let longitude = 127.300616,
+        //latitude = 37.657918
         const url = `/shelters/mix?x=${longitude}&y=${latitude}`;
         fetch(url)
             .then(response => {
